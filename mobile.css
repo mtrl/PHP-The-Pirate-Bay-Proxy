@@ -21,6 +21,10 @@
 	}
 	
 	.detName {
-		width: 278px;
+		width: 270px;
 	}
+	
+	table th abbr { font-size: 18px; }
+	
+	table tbody td img { width: 30px; height: auto; }
 }

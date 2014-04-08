@@ -77,11 +77,14 @@ class Proxy
      * @param array $post $_POST global var
      * @return string Response 
      */
+    
+    private $url;
+    
     public function run($url, $get, $post)
     {
         // Use default
-  
             $url = $this->decodeUrl($url);
+            $this->url = $url;
         
         // Apppend get params to request
         if($get) {
@@ -117,9 +120,22 @@ class Proxy
     }
     
     private function removeAdvertising($body) {
-        $lines = explode("\r\n", $body);
-        echo sizeof($lines);
-        return $body;
+        $lines = explode("\n", $body);
+        if (!isset($url) || $url == "") {
+            $lower = 182;
+            $upper = 196;
+        }
+        echo $url;
+        elseif($url == "s/") {
+            $lower = 685;
+            $upper = 700;
+        }
+    
+        for($i = $lower; $i <= $upper; $i++) {
+            unset($lines[$i]);
+        }
+        //echo "|" . $this->url . "|";
+        return implode("\n", $lines);
     }
 
     private function insertBeforeHead($body) {

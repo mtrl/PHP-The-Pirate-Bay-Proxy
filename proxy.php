@@ -112,7 +112,14 @@ class Proxy
         // Set response headers
         $this->setResponseHeaders($header);
                
-	return $this->insertBeforeHead($body);
+	$body = $this->insertBeforeHead($body);
+        return $this->removeAdvertising($body);
+    }
+    
+    private function removeAdvertising($body) {
+        $lines = explode("\r\n", $body);
+        echo sizeof($lines);
+        return $body;
     }
 
     private function insertBeforeHead($body) {

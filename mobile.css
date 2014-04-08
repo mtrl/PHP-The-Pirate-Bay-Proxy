@@ -4,11 +4,23 @@
 		
 	}
 	
-	#inp span, howdl, #navlinks strong, footer {
+	#main-content {
+		margin-left: 0;
+	}
+	
+	#inp span, #howdl, #navlinks strong, footer {
 		display: none;
 	}
 	
 	#fp #inp input {
 		width: 90%;
+	}
+	
+	table#searchResult {
+		width: 398px;
+	}
+	
+	.detname {
+		width: 278px;
 	}
 }

@@ -120,22 +120,22 @@ class Proxy
     }
     
     private function removeAdvertising($body) {
-        $lines = explode("\n", $body);
-        if (!isset($url) || $url == "") {
+        if (!isset($this->url) || $this->url == "") {
             $lower = 182;
             $upper = 196;
         }
-        echo $url;
-        elseif($url == "s/") {
+        elseif($this->url == "s/") {
             $lower = 685;
-            $upper = 700;
+            $upper = 699;
         }
-    
-        for($i = $lower; $i <= $upper; $i++) {
-            unset($lines[$i]);
+        if(isset($lower) && isset($lower)) {
+            $lines = explode("\n", $body);
+            for($i = $lower; $i <= $upper; $i++) {
+                unset($lines[$i]);
+            }
+            $body = implode("\n", $lines);
         }
-        //echo "|" . $this->url . "|";
-        return implode("\n", $lines);
+        return $body;
     }
 
     private function insertBeforeHead($body) {

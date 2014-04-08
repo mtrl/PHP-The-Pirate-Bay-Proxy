@@ -9,7 +9,7 @@
 	}
 	
 	#inp span, #howdl, #navlinks strong, footer, #sky-right, iframe {
-		display: none;
+		display: none !important;
 	}
 	
 	#fp #inp input {

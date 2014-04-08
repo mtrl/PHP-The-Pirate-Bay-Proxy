@@ -1,5 +1,7 @@
 # PHP The Pirate Bay Proxy
 
+Modified to remove advertising and add a more mobile friendly UI to the proxy.
+
 This is a PHP proxy script for The Pirate Bay originally created by Pim de Haan for [ikwilthepiratebay.nl](http://ikwilthepiratebay.nl/).
 
 I have made some simple changes that improve the URL structure of the proxy.

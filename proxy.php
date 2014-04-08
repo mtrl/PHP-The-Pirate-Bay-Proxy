@@ -116,7 +116,8 @@ class Proxy
     }
 
     private function insertBeforeHead($body) {
-        $headHtml = '<link href="/mobile.css" rel="stylesheet">';
+        $headHtml = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+        $headHtml .= '<link href="/mobile.css" rel="stylesheet">';
         return str_replace("</head>", $headHtml . "</head>", $body);
     }
     

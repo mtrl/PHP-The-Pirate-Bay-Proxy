@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors',1);
 /**
  * Copyright (C) 2012 Pim de Haan
  * 
@@ -111,7 +112,12 @@ class Proxy
         // Set response headers
         $this->setResponseHeaders($header);
                
-        return $body;
+	return $this->insertBeforeHead($body);
+    }
+
+    private function insertBeforeHead($body) {
+        $headHtml = '<link href="/mobile.css" rel="stylesheet">';
+        return str_replace("</head>", $headHtml . "</head>", $body);
     }
     
     protected function setResponseHeaders($header)

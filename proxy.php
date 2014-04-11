@@ -141,7 +141,7 @@ class Proxy
     private function insertBeforeHead($body) {
         $headHtml = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
         $headHtml .= '<link href="/mobile.css" rel="stylesheet">';
-        $headHtml .= '<link type="application/opensearchdescription+xml" rel="search" href="osdd.xml"/>';
+        $headHtml .= '<link type="application/opensearchdescription+xml" rel="search" href="http://tpb.mtrl.co.uk/osdd.xml"/>';
         return str_replace("</head>", $headHtml . "</head>", $body);
     }
     

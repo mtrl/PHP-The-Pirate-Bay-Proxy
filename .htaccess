@@ -1,4 +1,4 @@
 RewriteEngine on
 RewriteBase /
-RewriteCond $1 !^(proxy\.php|mobile\.css)
+RewriteCond $1 !^(proxy\.php|mobile\.css|osdd.xml)
 RewriteRule ^(.*)$ proxy.php?url=$1 [L,QSA]
